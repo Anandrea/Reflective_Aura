@@ -6,14 +6,7 @@ public class EmotionStateManager : MonoBehaviour
 {
     //Context to StateMachine
 
-    //Was braucht die Base:
-    /*
-    - Eine Hintergrundfarbe
-    - Objekte die auftauchen und verschwinden
-    - Einen Zähler der die Szene nicht überladen lässt
-    - Musik die abgespielt wird
-    
-    */
+    public LimbViewer limbs;
     public Material input;
     EmotionBaseState currentState;
     public StateAngry StateAngry = new StateAngry();
@@ -34,7 +27,7 @@ public class EmotionStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    void onCollisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision){
         currentState.onCollisionEnter(this, collision);
     }
 

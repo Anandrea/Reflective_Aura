@@ -9,7 +9,7 @@ public class StateHappy : EmotionBaseState
         Debug.Log("Happy!");
         //emotion.input.SetColor("_Input_Color_2", new Color(1,1,0,1));
         
-        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),Color.yellow,5f);
+        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),Color.yellow,2f);
         emotion.StartCoroutine(coroutine);
     }
 
