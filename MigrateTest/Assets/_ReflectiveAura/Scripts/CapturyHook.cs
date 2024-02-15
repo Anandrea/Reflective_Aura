@@ -46,8 +46,6 @@ public class CapturyHook : MonoBehaviour {
     private CapturyNetworkPlugin capturyPlugin;
     public List<TrackedSkeleton> skeletons;
 
-    public string printTransform = "";
-
     void Start() {
         capturyPlugin = GetComponent<CapturyNetworkPlugin>();
         capturyPlugin.SkeletonFound += OnSkeletonFound;
