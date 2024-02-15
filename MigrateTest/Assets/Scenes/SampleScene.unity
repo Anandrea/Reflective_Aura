@@ -138,6 +138,7 @@ GameObject:
   - component: {fileID: 146084125}
   - component: {fileID: 146084124}
   - component: {fileID: 146084126}
+  - component: {fileID: 146084127}
   m_Layer: 0
   m_Name: TrackingArea
   m_TagString: Untagged
@@ -233,7 +234,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146084119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ef055e6e54665fc42a5abf93f610e1b0, type: 3}
   m_Name: 
@@ -261,7 +262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 086a399939e6c094886da367ef9f81ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  host: 172.16.6.36
+  host: 127.0.0.1
   port: 2101
   scaleFactor: 0.001
   actorCheckTimeout: 500
@@ -271,7 +272,7 @@ MonoBehaviour:
   cameras: []
   arTags: []
   log: {fileID: 0}
-  streamedSkeleton: {fileID: 1236274670}
+  streamedSkeleton: {fileID: 919132149155446097, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
   streamedAvatar: {fileID: 9000000, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
   streamedSkeletonLeftHip: LeftUpLeg
   streamedSkeletonHead: Head
@@ -283,12 +284,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146084119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 548eb5add47b3fa4a81dd6b9d0710a2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fixDegree: 90
+--- !u!114 &146084127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146084119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbcf4c6d79186d5439b07eda12a61cc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletons: []
+  printTransform: 
 --- !u!4 &419764071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -512973967090807769, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
@@ -686,11 +701,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 5866666021909216657, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
---- !u!1 &1236274670 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
-  m_PrefabInstance: {fileID: 1236274669}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1236274671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
@@ -753,7 +763,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5053785339178495143, guid: 73ffbc06802a247cfb1b26f4ee67eba8, type: 3}
       propertyPath: m_LocalRotation.w
