@@ -9,7 +9,7 @@ public class EmotionStateManager : MonoBehaviour
     public LimbViewer limbs;
     public Material input;
 
-    public bool waited = false;
+    public bool waited;
 
     EmotionBaseState currentState;
     public StateAngry StateAngry = new StateAngry();
@@ -19,9 +19,9 @@ public class EmotionStateManager : MonoBehaviour
 
     void Start()
     {
+        waited = false;
 
         currentState = StateNeutral;
-
         currentState.EnterState(this);
     }
 
