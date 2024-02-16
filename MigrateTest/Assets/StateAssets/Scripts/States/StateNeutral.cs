@@ -11,7 +11,7 @@ public class StateNeutral : EmotionBaseState
     public override void EnterState(EmotionStateManager emotion){
         Debug.Log("Neutral!");
         timerAngry = 0.0f;
-        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),Color.green,2f);
+        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(187,177,160,255),2f);
         emotion.StartCoroutine(coroutine);
     }
 

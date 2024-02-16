@@ -601,6 +601,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   limbs: {fileID: 695356976}
   input: {fileID: 2100000, guid: bc2a7fb5f8aef1f4fadd735a7454b4d1, type: 2}
+  waited: 1
 --- !u!114 &695356976
 MonoBehaviour:
   m_ObjectHideFlags: 0
