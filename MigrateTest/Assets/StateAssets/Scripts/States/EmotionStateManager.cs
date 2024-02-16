@@ -8,6 +8,9 @@ public class EmotionStateManager : MonoBehaviour
 
     public LimbViewer limbs;
     public Material input;
+
+    public bool waited = false;
+
     EmotionBaseState currentState;
     public StateAngry StateAngry = new StateAngry();
     public StateHappy StateHappy = new StateHappy();
@@ -43,5 +46,10 @@ public class EmotionStateManager : MonoBehaviour
         input.SetColor("_Input_Color_2", currentColor);
         yield return null;
         }
+    }
+
+    public virtual IEnumerator WaitUntilStateChange(){
+        yield return new WaitForSeconds(5);
+        waited = true;
     }
 }

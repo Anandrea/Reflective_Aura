@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Background
-  m_Shader: {fileID: -6465566751694194690, guid: b8e053fa9b924f045bdc1369143064a3, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: d7c861dbcd4aa1c428b2237f86abf5f5, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,11 +41,9 @@ Material:
     - _QueueOffset: 0
     m_Colors:
     - _Input_Color_1: {r: 0.24528292, g: 0.24528292, b: 0.24528292, a: 0}
-    - _Input_Color_2: {r: 0.99918395, g: 0.0008160448, b: 0, a: 1}
-    - _Input_color_1: {r: 0.24528292, g: 0.24528292, b: 0.24528292, a: 0}
-    - _Input_color_2: {r: 1, g: 0, b: 0, a: 0}
+    - _Input_Color_2: {r: 0.99958974, g: 0.00041025627, b: 0, a: 1}
   m_BuildTextureStacks: []
---- !u!114 &8801208534424984090
+--- !u!114 &6332110869021623033
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

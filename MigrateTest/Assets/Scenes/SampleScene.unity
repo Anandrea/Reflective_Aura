@@ -175,7 +175,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 146084119}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -373,7 +373,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57ede59010601b141a9c710f3a1c77de, type: 2}
+  - {fileID: 2100000, guid: bc2a7fb5f8aef1f4fadd735a7454b4d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -468,8 +468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889f16b23247fa6418a68fd1115da0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limbs: {fileID: 0}
-  input: {fileID: 2100000, guid: 57ede59010601b141a9c710f3a1c77de, type: 2}
 --- !u!135 &459319898
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -598,11 +596,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 695356973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889f16b23247fa6418a68fd1115da0f0, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e3d3d34ecb23264698e68a461877338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   limbs: {fileID: 695356976}
-  input: {fileID: 2100000, guid: 57ede59010601b141a9c710f3a1c77de, type: 2}
+  input: {fileID: 2100000, guid: bc2a7fb5f8aef1f4fadd735a7454b4d1, type: 2}
 --- !u!114 &695356976
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -612,9 +610,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 695356973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50973b7aec18b7c42859376dff70c2e7, type: 3}
+  m_Script: {fileID: 11500000, guid: ccdc649e1873b164f9ba12579aea9227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftHand: {fileID: 0}
+  rightHand: {fileID: 0}
+  head: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
