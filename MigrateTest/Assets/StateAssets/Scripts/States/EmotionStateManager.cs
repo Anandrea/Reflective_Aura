@@ -6,15 +6,11 @@ public class EmotionStateManager : MonoBehaviour
 {
     //Context to StateMachine
 
-    //Was braucht die Base:
-    /*
-    - Eine Hintergrundfarbe
-    - Objekte die auftauchen und verschwinden
-    - Einen Zähler der die Szene nicht überladen lässt
-    - Musik die abgespielt wird
-    
-    */
+    public LimbViewer limbs;
     public Material input;
+
+    public bool waited;
+
     EmotionBaseState currentState;
     public StateAngry StateAngry = new StateAngry();
     public StateHappy StateHappy = new StateHappy();
@@ -23,9 +19,9 @@ public class EmotionStateManager : MonoBehaviour
 
     void Start()
     {
+        waited = false;
 
         currentState = StateNeutral;
-
         currentState.EnterState(this);
     }
 
@@ -34,7 +30,7 @@ public class EmotionStateManager : MonoBehaviour
         currentState.UpdateState(this);
     }
 
-    void onCollisionEnter(Collision collision){
+    void OnCollisionEnter(Collision collision){
         currentState.onCollisionEnter(this, collision);
     }
 
@@ -50,5 +46,10 @@ public class EmotionStateManager : MonoBehaviour
         input.SetColor("_Input_Color_2", currentColor);
         yield return null;
         }
+    }
+
+    public virtual IEnumerator WaitUntilStateChange(){
+        yield return new WaitForSeconds(5);
+        waited = true;
     }
 }
