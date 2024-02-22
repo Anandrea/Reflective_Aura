@@ -280,7 +280,7 @@ MonoBehaviour:
   cameras: []
   arTags: []
   log: {fileID: 0}
-  streamedSkeleton: {fileID: 919132149155446097, guid: 52b7f28fcb2a6f148a337ef9ef380a63, type: 3}
+  streamedSkeleton: {fileID: 919132149155446097, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
   streamedAvatar: {fileID: 9000000, guid: 0ca46e91dc9500448bb4fdf7dea396a8, type: 3}
   streamedSkeletonLeftHip: LeftUpLeg
   streamedSkeletonHead: Head
