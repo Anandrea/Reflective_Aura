@@ -12,19 +12,23 @@ public class StateHappy : EmotionBaseState
         
         coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(255,232,128,255),2f);
         emotion.StartCoroutine(coroutine);
+
+        emotion.backg.SetHappy();
+        emotion.soundManager.HappySound();
     }
 
     public override void UpdateState(EmotionStateManager emotion){
 
-        /*if(timerNeutral >= 4.0f){
-            if(){
+        if(timerNeutral >= 4.0f){
+            if(emotion.limbs.leftHand.transform.position.y < emotion.limbs.head.transform.position.y && emotion.limbs.rightHand.transform.position.y < emotion.limbs.head.transform.position.y)
+            {
                 emotion.StopCoroutine(coroutine);
                 emotion.SwitchState(emotion.StateNeutral);
             }
         }
         else{
             timerNeutral += Time.deltaTime;
-        }*/
+        }
     }
 
     public override void onCollisionEnter(EmotionStateManager emotion, Collision collision){

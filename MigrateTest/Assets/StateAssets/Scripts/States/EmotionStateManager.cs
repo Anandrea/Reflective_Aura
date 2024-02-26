@@ -1,10 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EmotionStateManager : MonoBehaviour
 {
     //Context to StateMachine
+    public ChangeBackground backg;
+    public SoundManager soundManager;
 
     public LimbViewer limbs;
     public Material input;

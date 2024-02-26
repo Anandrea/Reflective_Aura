@@ -12,12 +12,16 @@ public class StateAngry : EmotionBaseState
 
         coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(153,32,18,255),2f);
         emotion.StartCoroutine(coroutine);
+
+        emotion.backg.SetAngry();
+        emotion.soundManager.AngrySound();
     }
 
     public override void UpdateState(EmotionStateManager emotion){
 
-        if(timerNeutral >= 6.0f){
-            if(emotion.limbs.leftHand.transform.position.y < emotion.limbs.rightHand.transform.position.y){
+        if(timerNeutral >= 4.0f){
+            if(emotion.limbs.leftElbow.transform.position.x < emotion.limbs.leftHand.transform.position.x || emotion.limbs.rightElbow.transform.position.x > emotion.limbs.rightHand.transform.position.x)
+            {
                 emotion.StopCoroutine(coroutine);
                 emotion.SwitchState(emotion.StateNeutral);
             }

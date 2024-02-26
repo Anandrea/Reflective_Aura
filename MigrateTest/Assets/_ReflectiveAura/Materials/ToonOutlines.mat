@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonOutlines
-  m_Shader: {fileID: -6465566751694194690, guid: 4d3821566843b864196945dfd195e538, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 917befeba3835f042bafa6d10184aca8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -45,6 +45,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _HatchingTex:
+        m_Texture: {fileID: 2800000, guid: 0264a81ba25a33645bd08eeab7965a28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -92,6 +96,7 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
+    - _Drawing_Strength: 0.35
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
@@ -99,6 +104,8 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Highlight_Threshhold_High: 0.9
+    - _Highlight_Threshhold_Low: 0.4
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _Outline_Thickness: 0.01
@@ -106,8 +113,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Rotation: 0
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Smudge_Strength: 0.002
     - _SpecularHighlights: 1
     - _Speed: 1.5
     - _SrcBlend: 1
@@ -119,7 +128,11 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _Highlight_Color: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 0}
+    - _Main_Color: {r: 0, g: 0, b: 0, a: 0}
+    - _Offset: {r: 0, g: 0, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
+    - _Tiling: {r: 60, g: 40, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5034231759694163409
 MonoBehaviour:
