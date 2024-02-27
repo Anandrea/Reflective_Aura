@@ -14,6 +14,7 @@ public class StateAngry : EmotionBaseState
         coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"), new Color32(153, 32, 18, 255), 3f);
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetAngry();
+        emotion.soundManager.AngrySound();
     }
 
     public override void UpdateState(EmotionStateManager emotion)

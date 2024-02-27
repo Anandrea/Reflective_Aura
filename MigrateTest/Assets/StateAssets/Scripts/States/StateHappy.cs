@@ -14,6 +14,7 @@ public class StateHappy : EmotionBaseState
         coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"), new Color32(255, 232, 128, 255), 3f);
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetHappy();
+        emotion.soundManager.HappySound();
     }
 
     public override void UpdateState(EmotionStateManager emotion)

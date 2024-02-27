@@ -14,6 +14,7 @@ public class StateSad : EmotionBaseState
         coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"), new Color32(0, 0, 75, 255), 3f);
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetSad();
+        emotion.soundManager.SadSound();
     }
 
     public override void UpdateState(EmotionStateManager emotion)
@@ -21,7 +22,7 @@ public class StateSad : EmotionBaseState
 
         if (timerNeutral >= 2.0f)
         {
-            if (emotion.limbs.head.transform.position.y > emotion.limbs.neck.transform.position.y)
+            if (emotion.limbs.head.transform.position.y >= 1.4)
             {
                 emotion.StopCoroutine(coroutine);
                 emotion.SwitchState(emotion.StateNeutral);

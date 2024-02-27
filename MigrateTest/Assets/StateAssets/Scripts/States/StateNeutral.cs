@@ -15,6 +15,7 @@ public class StateNeutral : EmotionBaseState
         coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"), new Color32(187, 177, 160, 255), 2f);
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetNeutral();
+        emotion.soundManager.NeutralSound();
     }
 
     public override void UpdateState(EmotionStateManager emotion)
@@ -23,26 +24,11 @@ public class StateNeutral : EmotionBaseState
         if (emotion.limbs.head && emotion.limbs.leftHand && emotion.limbs.rightHand && emotion.limbs.neck && emotion.limbs.leftElbow && emotion.limbs.rightElbow && emotion.limbs.shoulders != null)
         {
 
-            //Angry
-            if (emotion.limbs.leftHand.transform.position.y > emotion.limbs.hips.transform.position.y && emotion.limbs.shoulders.transform.position.y > emotion.limbs.leftHand.transform.position.y)
-            {        //Linke Hand zwischen Schultern und Hüften
-                if (emotion.limbs.rightHand.transform.position.y > emotion.limbs.hips.transform.position.y && emotion.limbs.shoulders.transform.position.y > emotion.limbs.rightHand.transform.position.y)
-                {  //Rechte Hand zwischen Schultern und Hüften
-                    timerAngry += Time.deltaTime;
-                    if (timerAngry >= 1.5f)
-                    { //Dauer bis Statewechsel
-                        timerAngry = 0.0f;
-                        emotion.StopCoroutine(coroutine);
-                        emotion.SwitchState(emotion.StateAngry);
-                    }
-                }
-            }
-
             //Sad
-            if (emotion.limbs.hips.transform.position.y > emotion.limbs.leftHand.transform.position.y && emotion.limbs.hips.transform.position.y > emotion.limbs.rightHand.transform.position.y)
-            {            //Hände unter Hüften
-                if (emotion.limbs.neck.transform.position.y > emotion.limbs.head.transform.position.y)
-                {                                                                                                      //Neck höher als Kopf
+            if (emotion.limbs.hips.transform.position.y > emotion.limbs.leftHand.transform.position.y && emotion.limbs.hips.transform.position.y > emotion.limbs.rightHand.transform.position.y) //Hände unter Hüften
+            {            
+                if (emotion.limbs.head.transform.position.y < 1.4)
+                {
                     timerSad += Time.deltaTime;
                     if (timerSad >= 1.5f)
                     { //Dauer bis Statewechsel
@@ -51,17 +37,39 @@ public class StateNeutral : EmotionBaseState
                         emotion.SwitchState(emotion.StateSad);
                     }
                 }
+                //emotion.limbs.neck.transform.position.y > emotion.limbs.head.transform.position.y
             }
 
             //Happy
-            if (emotion.limbs.leftHand.transform.position.y > emotion.limbs.head.transform.position.y && emotion.limbs.rightHand.transform.position.y > emotion.limbs.head.transform.position.y)
-            {            //Hände über Kopf
-                timerHappy += Time.deltaTime;
-                if (timerHappy >= 1.5f)
-                { //Dauer bis Statewechsel
-                    timerHappy = 0.0f;
-                    emotion.StopCoroutine(coroutine);
-                    emotion.SwitchState(emotion.StateHappy);
+            if (emotion.limbs.head.transform.position.y > 1.4)
+            {
+                if (emotion.limbs.leftHand.transform.position.y > emotion.limbs.head.transform.position.y && emotion.limbs.rightHand.transform.position.y > emotion.limbs.head.transform.position.y)
+                {            //Hände über Kopf
+                    timerHappy += Time.deltaTime;
+                    if (timerHappy >= 1.5f)
+                    { //Dauer bis Statewechsel
+                        timerHappy = 0.0f;
+                        emotion.StopCoroutine(coroutine);
+                        emotion.SwitchState(emotion.StateHappy);
+                    }
+                }
+            }
+
+            //Angry
+            if (emotion.limbs.head.transform.position.y > 1.4)
+            {
+                if (emotion.limbs.leftHand.transform.position.y > emotion.limbs.hips.transform.position.y && emotion.limbs.shoulders.transform.position.y > emotion.limbs.leftHand.transform.position.y)
+                {        //Linke Hand zwischen Schultern und Hüften
+                    if (emotion.limbs.rightHand.transform.position.y > emotion.limbs.hips.transform.position.y && emotion.limbs.shoulders.transform.position.y > emotion.limbs.rightHand.transform.position.y)
+                    {  //Rechte Hand zwischen Schultern und Hüften
+                        timerAngry += Time.deltaTime;
+                        if (timerAngry >= 1.5f)
+                        { //Dauer bis Statewechsel
+                            timerAngry = 0.0f;
+                            emotion.StopCoroutine(coroutine);
+                            emotion.SwitchState(emotion.StateAngry);
+                        }
+                    }
                 }
             }
         }
