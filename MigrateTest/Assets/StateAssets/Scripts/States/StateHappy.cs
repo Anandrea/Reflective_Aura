@@ -15,6 +15,7 @@ public class StateHappy : EmotionBaseState
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetHappy();
         emotion.soundManager.HappySound();
+        emotion.blendshapeDriver.SetHappy();
     }
 
     public override void UpdateState(EmotionStateManager emotion)

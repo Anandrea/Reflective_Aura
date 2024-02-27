@@ -15,6 +15,7 @@ public class StateSad : EmotionBaseState
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetSad();
         emotion.soundManager.SadSound();
+        emotion.blendshapeDriver.SetSad();
     }
 
     public override void UpdateState(EmotionStateManager emotion)

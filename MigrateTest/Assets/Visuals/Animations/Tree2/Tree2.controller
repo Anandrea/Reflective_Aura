@@ -462,7 +462,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SadToHappy
-  m_Speed: -2
+  m_Speed: -1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6773368116088772806}
@@ -551,7 +551,7 @@ AnimatorStateMachine:
     m_Position: {x: 330, y: 400, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4890081638997403400}
-    m_Position: {x: 70, y: 390, z: 0}
+    m_Position: {x: 350, y: 780, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1103466950790251356}
     m_Position: {x: -170, y: 310, z: 0}
@@ -578,7 +578,7 @@ AnimatorStateMachine:
     m_Position: {x: -150, y: 660, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5822406068685377872}
-    m_Position: {x: 80, y: 670, z: 0}
+    m_Position: {x: 80, y: 720, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4182007407962347334}
     m_Position: {x: 330, y: 660, z: 0}
@@ -1277,7 +1277,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HappyToNo
-  m_Speed: -1
+  m_Speed: -2
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: -6998564354359485453}

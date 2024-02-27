@@ -16,6 +16,7 @@ public class StateNeutral : EmotionBaseState
         emotion.StartCoroutine(coroutine);
         emotion.backg.SetNeutral();
         emotion.soundManager.NeutralSound();
+        emotion.blendshapeDriver.SetNeutral();
     }
 
     public override void UpdateState(EmotionStateManager emotion)

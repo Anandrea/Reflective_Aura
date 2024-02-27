@@ -8,6 +8,7 @@ public class EmotionStateManager : MonoBehaviour
     //Context to StateMachine
     public ChangeBackground backg;
     public SoundManager soundManager;
+    public BlendshapeDriver blendshapeDriver;
 
     public LimbViewer limbs;
     public Material input;
