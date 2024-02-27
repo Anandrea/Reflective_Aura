@@ -10,14 +10,15 @@ public class StateAngry : EmotionBaseState
         Debug.Log("Angry!");
         timerNeutral = 0.0f;
 
-        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(153,32,18,255),2f);
+        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(153,32,18,255),3f);
         emotion.StartCoroutine(coroutine);
     }
 
     public override void UpdateState(EmotionStateManager emotion){
 
-        if(timerNeutral >= 6.0f){
-            if(emotion.limbs.leftHand.transform.position.y < emotion.limbs.rightHand.transform.position.y){
+        if(timerNeutral >= 2.0f){
+            if(emotion.limbs.leftHand.transform.position.y > emotion.limbs.shoulders.transform.position.y || emotion.limbs.rightHand.transform.position.y > emotion.limbs.shoulders.transform.position.y || 
+               emotion.limbs.hips.transform.position.y > emotion.limbs.leftHand.transform.position.y || emotion.limbs.hips.transform.position.y > emotion.limbs.rightHand.transform.position.y){
                 emotion.StopCoroutine(coroutine);
                 emotion.SwitchState(emotion.StateNeutral);
             }

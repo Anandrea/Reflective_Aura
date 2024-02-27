@@ -10,21 +10,21 @@ public class StateSad : EmotionBaseState
         Debug.Log("Sad!");
         timerNeutral = 0.0f;
         
-        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(0,0,75,255),2f);
+        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(0,0,75,255),3f);
         emotion.StartCoroutine(coroutine);
     }
 
     public override void UpdateState(EmotionStateManager emotion){
 
-        /*if(timerNeutral >= 4.0f){
-            if(){
+        if(timerNeutral >= 2.0f){
+            if(emotion.limbs.head.transform.position.y > emotion.limbs.neck.transform.position.y){
                 emotion.StopCoroutine(coroutine);
                 emotion.SwitchState(emotion.StateNeutral);
             }
         }
         else{
             timerNeutral += Time.deltaTime;
-        }*/
+        }
     }
 
     public override void onCollisionEnter(EmotionStateManager emotion, Collision collision){

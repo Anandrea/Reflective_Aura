@@ -373,7 +373,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 57ede59010601b141a9c710f3a1c77de, type: 2}
+  - {fileID: 2100000, guid: cd7b0da7a2d2fa640a8b9cffcb6213d3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -468,9 +468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889f16b23247fa6418a68fd1115da0f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  limbs: {fileID: 0}
-  input: {fileID: 0}
-  waited: 0
 --- !u!135 &459319898
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -599,11 +596,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 695356973}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 889f16b23247fa6418a68fd1115da0f0, type: 3}
+  m_Script: {fileID: 11500000, guid: e2d62e198cdb46e45ad5129eed934b92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   limbs: {fileID: 695356976}
-  input: {fileID: 2100000, guid: 57ede59010601b141a9c710f3a1c77de, type: 2}
+  input: {fileID: 2100000, guid: cd7b0da7a2d2fa640a8b9cffcb6213d3, type: 2}
   waited: 0
 --- !u!114 &695356976
 MonoBehaviour:
@@ -620,6 +617,11 @@ MonoBehaviour:
   leftHand: {fileID: 0}
   rightHand: {fileID: 0}
   head: {fileID: 0}
+  neck: {fileID: 0}
+  leftElbow: {fileID: 0}
+  rightElbow: {fileID: 0}
+  hips: {fileID: 0}
+  shoulders: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
