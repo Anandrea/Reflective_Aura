@@ -17,44 +17,42 @@ public class StateNeutral : EmotionBaseState
 
     public override void UpdateState(EmotionStateManager emotion){
 
-        //hier sollen die ganzen timerabfragen für jeden state kommen
-        if(emotion.limbs.head && emotion.limbs.leftHand && emotion.limbs.rightHand != null){
+        if(emotion.limbs.head && emotion.limbs.leftHand && emotion.limbs.rightHand && emotion.limbs.neck && emotion.limbs.leftElbow && emotion.limbs.rightElbow && emotion.limbs.shoulders != null){
 
-            if(emotion.limbs.leftHand.transform.position.y > emotion.limbs.rightHand.transform.position.y){
-                timerAngry += Time.deltaTime;
-                if(timerAngry >= 0.5f){ //hieranpassenjenachFunktionalität
-                    Debug.Log("Timer erreicht");
+            //Angry
+            if(emotion.limbs.leftHand.transform.position.y > emotion.limbs.hips.transform.position.y && emotion.limbs.shoulders.transform.position.y > emotion.limbs.leftHand.transform.position.y){        //Linke Hand zwischen Schultern und Hüften
+                if(emotion.limbs.rightHand.transform.position.y > emotion.limbs.hips.transform.position.y && emotion.limbs.shoulders.transform.position.y > emotion.limbs.rightHand.transform.position.y){  //Rechte Hand zwischen Schultern und Hüften
+                        timerAngry += Time.deltaTime;
+                        if(timerAngry >= 0.5f){ //Dauer bis Statewechsel
+                            timerAngry = 0.0f;
+                            emotion.StopCoroutine(coroutine);
+                            emotion.SwitchState(emotion.StateAngry);  
+                    }
+                }
+            }
+
+            //Sad
+            if(emotion.limbs.hips.transform.position.y > emotion.limbs.leftHand.transform.position.y && emotion.limbs.hips.transform.position.y > emotion.limbs.rightHand.transform.position.y){            //Hände unter Hüften
+                if(emotion.limbs.neck.transform.position.y > emotion.limbs.head.transform.position.y){                                                                                                      //Neck höher als Kopf
+                    timerSad += Time.deltaTime;
+                    if(timerSad >= 0.5f){ //Dauer bis Statewechsel
+                        timerSad = 0.0f;
+                        emotion.StopCoroutine(coroutine);
+                        emotion.SwitchState(emotion.StateSad);
+                    }
+                }
+            }
+
+            //Happy
+            if(emotion.limbs.leftHand.transform.position.y > emotion.limbs.head.transform.position.y && emotion.limbs.rightHand.transform.position.y > emotion.limbs.head.transform.position.y){            //Hände über Kopf
+                timerHappy += Time.deltaTime;
+                if(timerHappy >= 0.5f){ //Dauer bis Statewechsel
+                    timerHappy = 0.0f;
                     emotion.StopCoroutine(coroutine);
-                    emotion.SwitchState(emotion.StateAngry);  
+                    emotion.SwitchState(emotion.StateHappy);  
                 }
             }
         }
-
-        /*if(BedingungSad){
-            timerSad += Time.deltaTime;
-            if(timerSad >= 3.0f){
-                timerSad = 0.0f;
-                emotion.StopCoroutine(coroutine);
-                emotion.SwitchState(emotion.StateSad);
-
-        if(BedingungHappy){
-            timerHappy += Time.deltaTime;
-            if(timerHappy >= 3.0f){
-                timerHappy = 0.0f;
-                emotion.StopCoroutine(coroutine);
-                emotion.SwitchState(emotion.StateHappy);  
-        
-
-
-        if(emotion.limbs.head && emotion.limbs.leftHand && emotion.limbs.rightHand != null){
-            Debug.Log("First if");
-
-            if(emotion.limbs.leftHand.transform.position.y > emotion.limbs.rightHand.transform.position.y){
-                Debug.Log("Second if");
-                emotion.StopCoroutine(coroutine);
-                emotion.SwitchState(emotion.StateAngry);
-            }
-        }*/
     }
 
     public override void onCollisionEnter(EmotionStateManager emotion, Collision collision){

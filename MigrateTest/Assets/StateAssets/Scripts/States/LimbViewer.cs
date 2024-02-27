@@ -7,7 +7,16 @@ public class LimbViewer : MonoBehaviour
     GameObject trackingArea;
     public GameObject leftHand;
     public GameObject rightHand;
+
     public GameObject head;
+    public GameObject neck;
+
+    public GameObject leftElbow;
+    public GameObject rightElbow;
+
+    public GameObject hips;
+
+    public GameObject shoulders;
 
     void Start(){
         trackingArea = GameObject.Find("TrackingArea");
@@ -15,6 +24,7 @@ public class LimbViewer : MonoBehaviour
 
     void Update(){
         
+        //Hände
         if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftForeArm/LeftHand")){
             leftHand = GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftForeArm/LeftHand");
         }
@@ -29,11 +39,53 @@ public class LimbViewer : MonoBehaviour
             Debug.Log("rightHand doesn't exist!");
         }
 
+
+        //Kopf
         if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/Spine4/Neck/Head/HeadEE")){
             head = GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/Spine4/Neck/Head/HeadEE");
         }
         else{
             Debug.Log("head doesn't exist!");
+        }
+
+        //Neck
+        if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/Spine4/Neck")){
+            neck = GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/Spine4/Neck");
+        }
+        else{
+            Debug.Log("neck doesn't exist!");
+        }
+
+
+        //Ellenbögen
+        if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftForeArm")){
+            leftElbow = GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/LeftShoulder/LeftArm/LeftForeArm");
+        }
+        else{
+            Debug.Log("leftElbow doesn't exist!");
+        }
+
+        if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/RightShoulder/RightArm/RightForeArm")){
+            rightElbow = GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/RightShoulder/RightArm/RightForeArm");
+        }
+        else{
+            Debug.Log("rightElbow doesn't exist!");
+        }
+
+        //Hips
+        if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips")){
+            hips = GameObject.Find("defaultLiveHands(Clone)/Root/Hips");
+        }
+        else{
+            Debug.Log("hips doesn't exist!");
+        }
+
+        //Shoulders
+        if(GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/Spine4")){
+            shoulders = GameObject.Find("defaultLiveHands(Clone)/Root/Hips/Spine/Spine1/Spine2/Spine3/Spine4");
+        }
+        else{
+            Debug.Log("shoulders doesn't exist!");
         }
     }
 }
