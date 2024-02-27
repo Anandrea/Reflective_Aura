@@ -6,32 +6,36 @@ public class StateAngry : EmotionBaseState
     private IEnumerator coroutine;
     private float timerNeutral = 0.0f;
 
-    public override void EnterState(EmotionStateManager emotion){
+    public override void EnterState(EmotionStateManager emotion)
+    {
         Debug.Log("Angry!");
         timerNeutral = 0.0f;
 
-        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"),new Color32(153,32,18,255),2f);
+        coroutine = emotion.ColorLerp(emotion.input.GetColor("_Input_Color_2"), new Color32(153, 32, 18, 255), 3f);
         emotion.StartCoroutine(coroutine);
-
         emotion.backg.SetAngry();
-        emotion.soundManager.AngrySound();
     }
 
-    public override void UpdateState(EmotionStateManager emotion){
+    public override void UpdateState(EmotionStateManager emotion)
+    {
 
-        if(timerNeutral >= 4.0f){
-            if(emotion.limbs.leftElbow.transform.position.x < emotion.limbs.leftHand.transform.position.x || emotion.limbs.rightElbow.transform.position.x > emotion.limbs.rightHand.transform.position.x)
+        if (timerNeutral >= 2.0f)
+        {
+            if (emotion.limbs.leftHand.transform.position.y > emotion.limbs.shoulders.transform.position.y || emotion.limbs.rightHand.transform.position.y > emotion.limbs.shoulders.transform.position.y ||
+               emotion.limbs.hips.transform.position.y > emotion.limbs.leftHand.transform.position.y || emotion.limbs.hips.transform.position.y > emotion.limbs.rightHand.transform.position.y)
             {
                 emotion.StopCoroutine(coroutine);
                 emotion.SwitchState(emotion.StateNeutral);
             }
         }
-        else{
+        else
+        {
             timerNeutral += Time.deltaTime;
         }
     }
 
-    public override void onCollisionEnter(EmotionStateManager emotion, Collision collision){
-        
+    public override void onCollisionEnter(EmotionStateManager emotion, Collision collision)
+    {
+
     }
 }

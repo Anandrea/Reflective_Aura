@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChangeBackground : MonoBehaviour
 {
-    enum State {Angry = 0, Happy = 1, Sad = 2};
+    enum State {Angry = 0, Happy = 1, Sad = 2, Neutral = 3};
 
     [SerializeField] List<Animator> animators;
 
@@ -29,6 +29,14 @@ public class ChangeBackground : MonoBehaviour
         foreach (var animator in animators)
         {
             animator.SetInteger("State", (int)State.Sad);
+        }
+    }
+
+    public void SetNeutral()
+    {
+        foreach (var animator in animators)
+        {
+            animator.SetInteger("State", (int)State.Neutral);
         }
     }
 }
