@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: ToonSilhouette
-  m_Shader: {fileID: -6465566751694194690, guid: 3c379de6f5e385243b65199024180048, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 917befeba3835f042bafa6d10184aca8, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _HatchingTex:
-        m_Texture: {fileID: 2800000, guid: 783fcffa7558f4e439e8e737306c80aa, type: 3}
+        m_Texture: {fileID: 2800000, guid: 0264a81ba25a33645bd08eeab7965a28, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
@@ -149,7 +149,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Highlight_Color: {r: 0.12156863, g: 0.12156863, b: 0.12156863, a: 0}
+    - _Highlight_Color: {r: 0.16470589, g: 0.16470589, b: 0.16470589, a: 0}
     - _Highlight_Color_1: {r: 0.2, g: 0.2, b: 0.2, a: 1}
     - _Highlight_Color_2: {r: 0.4, g: 0.4, b: 0.4, a: 0}
     - _MainColor: {r: 0, g: 0, b: 0, a: 0}
